@@ -73,6 +73,8 @@ With Veneer in the project, the component has a pink studio-look Inspector: a he
 - **Limits**: two small diagrams (from above and from the side) that follow the sliders, with a dot for the target while playing, and the four limits: **Max yaw**, **Stop angle**, **Max pitch up**, **Max pitch down**.
 - **Bones**: **Automatic Setup** (humanoid rigs), the **Head**, and the list of body bones with a slider and the share in percent for each; add, remove and drag to reorder.
 
+The Inspector is drawn from a default layout that ships with the system. In `Tools > Veneer > Inspector Designer` you can customise it (Customize makes your own copy, Reset goes back to the default): fields, cards and tabs can be moved, renamed or hidden. The system's own items (state pill, live strip, rig notes, diagrams, Automatic Setup, body bone list) can be moved or hidden but not changed.
+
 The speeds and fade times stay hidden, as before. Without Veneer the Inspector falls back to Unity's default drawing of the fields, the same notes as help boxes and the Automatic Setup button; nothing else changes. The kit is installed by the setup guard (it asks once per editor session) or by copying `Veneer` into `Assets/Scripts`.
 
 ## Plugging in another system

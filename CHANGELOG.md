@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 ### Editor
+- The Inspector is now drawn from a default layout (`LookAnimatorDefaultLayout`) through the Veneer layout engine, with the same tabs, cards, fields, notes and look as before. The state pill, the live strip, the rig notes with the Update Mode button, the two diagrams, Automatic Setup and the body bone list are custom items (`LookAnimatorItems`). In `Tools > Veneer > Inspector Designer` a project can copy the layout and change the copy (Customize / Reset). The header title is now fixed text.
 - Studio-look Inspector on Veneer (accent pink): a header card with the logo and a state pill, hint rows for what would stop the look from working, and three tabs - **Look** (Target, Weight, Body turn), **Limits** (the two live diagrams and the four limits) and **Bones** (Automatic Setup, Head, body bone list with percent shares). The Inspector lives in the new `LookAnimator.Editor.Studio` assembly, which is left out of compilation without the kit.
 - New hint button: **Set Update Mode to Normal** (undoable) when the Animator updates with the physics.
 - The pill now says "Needs a head bone" only when a generic rig has no head and no body bone (before, a rig with only a Head set still showed it).

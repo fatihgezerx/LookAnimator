@@ -17,7 +17,7 @@ It works with any pose. A combat stance that twists the body or tilts the head i
 - Works over any animation and any pose; a twisted stance does not pull the head off the target
 - **Automatic Setup** finds the head, spine, chest and neck of a humanoid rig; on any other rig you set the bones by hand
 - No `Update` anywhere: one UniTask loop runs every look, and sleeps while nobody is looking at anything; a look with nothing to do does not even evaluate its animation graph
-- The Inspector shows the limits as two small diagrams that follow the sliders, and while playing shows what the look is doing
+- A studio-look Inspector (with Veneer): the limits as two small diagrams that follow the sliders, and while playing what the look is doing
 
 ## Setup
 
@@ -25,6 +25,7 @@ It works with any pose. A combat stance that twists the body or tilts the head i
 
 - Unity 2022.3 LTS or newer (made with Unity 6)
 - [UniTask](https://github.com/Cysharp/UniTask): the setup guard offers to install it
+- Optional: Veneer, for the studio-look Inspector (see "In the editor"); the guard offers to download it
 - A character with an Animator. A humanoid rig is found automatically; any other rig needs the Head and the body bones set by hand
 
 ### Installation
@@ -63,6 +64,16 @@ look.ClearTarget();                     // stop looking
 | **Body Turn** | How much of the turn the neck and the spine take once they have caught up; the head takes the rest. 0 = only the head turns |
 
 The speeds (how fast the head turns, how quickly the body catches up, the fade times) are hidden to keep the Inspector short; switch the Inspector to **Debug** mode to change them.
+
+## In the editor
+
+With Veneer in the project, the component has a pink studio-look Inspector: a header card with the Look Animator logo and a state pill (**Ready**, **Needs an Animator**, **Needs a head bone**, or while playing **Looking at ...**, **Idle**, **Not working**). Under it, notes say in words what would stop the look from working (no Animator, no bones on a generic rig, a bone outside the Animator's object, an Animator that updates with the physics - with a button that sets its Update Mode to Normal). While playing, a strip shows the weight and the angles to the target. Three tabs:
+
+- **Look** (what people change most): the **Target**, the overall **Weight**, and **Body turn**.
+- **Limits**: two small diagrams (from above and from the side) that follow the sliders, with a dot for the target while playing, and the four limits: **Max yaw**, **Stop angle**, **Max pitch up**, **Max pitch down**.
+- **Bones**: **Automatic Setup** (humanoid rigs), the **Head**, and the list of body bones with a slider and the share in percent for each; add, remove and drag to reorder.
+
+The speeds and fade times stay hidden, as before. Without Veneer the Inspector falls back to Unity's default drawing of the fields, the same notes as help boxes and the Automatic Setup button; nothing else changes. The kit is installed by the setup guard (it asks once per editor session) or by copying `Veneer` into `Assets/Scripts`.
 
 ## Plugging in another system
 

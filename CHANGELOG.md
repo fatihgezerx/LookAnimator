@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Editor
+- Studio-look Inspector on Veneer (accent pink): a header card with the logo and a state pill, hint rows for what would stop the look from working, and three tabs - **Look** (Target, Weight, Body turn), **Limits** (the two live diagrams and the four limits) and **Bones** (Automatic Setup, Head, body bone list with percent shares). The Inspector lives in the new `LookAnimator.Editor.Studio` assembly, which is left out of compilation without the kit.
+- New hint button: **Set Update Mode to Normal** (undoable) when the Animator updates with the physics.
+- The pill now says "Needs a head bone" only when a generic rig has no head and no body bone (before, a rig with only a Head set still showed it).
+- Without Veneer the Inspector falls back to Unity's default drawing plus the same notes and the Automatic Setup button. The rig checks (`LookDiagnostics`) and Automatic Setup (`LookAutoSetup`) moved out of the Inspector into UI-free files of `LookAnimator.Editor`.
+- `DependencyGuard` now also offers to download Veneer (optional, like the other own systems).
+- The IMGUI banner, cards and the reorderable list were replaced by kit controls; the saved data is unchanged.
+
 ## [1.0.0] - 2026-10-09
 
 First release. It grew out of the Combat System's *Fighter Look* and now stands on its own.
